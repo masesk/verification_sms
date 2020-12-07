@@ -23,8 +23,6 @@ def verify():
         user = db.execute(
             'SELECT id, vcode, verified FROM user WHERE username = ?', (username,)
         ).fetchone() 
-        print("User code is", user["vcode"])
-        print("Request code is ", )
         if user['verified'] is True:
             error = "User is already verified!"
         elif vcode != user['vcode']:
@@ -91,7 +89,6 @@ def login():
         user = db.execute(
             'SELECT * FROM user WHERE username = ?', (username,)
         ).fetchone()
-        print(user['verified'])
         if user is None:
             error = 'Incorrect username.'
         elif not check_password_hash(user['password'], password):
