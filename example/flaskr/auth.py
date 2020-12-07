@@ -67,7 +67,7 @@ def register():
             g_email = os.environ['GMAIL_ADDRESS']
             g_password = os.environ['GMAIL_PASSWORD']
             vms = VerificationSMS()
-            if email is None or password is None:
+            if g_email is None or g_password is None:
                 abort()
             vms.send_message(g_email, g_password , phone, vcode)
             db.execute(
