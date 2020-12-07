@@ -64,12 +64,12 @@ def register():
             error = 'User {} is already registered under this username and/or phone number.'.format(username)
         
         if error is None:
-            email = os.environ['GMAIL_ADDRESS']
-            password = os.environ['GMAIL_PASSWORD']
+            g_email = os.environ['GMAIL_ADDRESS']
+            g_password = os.environ['GMAIL_PASSWORD']
             vms = VerificationSMS()
             if email is None or password is None:
                 abort()
-            vms.send_message(email, password , phone, vcode)
+            vms.send_message(g_email, g_password , phone, vcode)
             db.execute(
                 'INSERT INTO user (username, password, phone, vcode) VALUES (?, ?, ?, ?)',
                 (username, generate_password_hash(password), phone, vcode)
