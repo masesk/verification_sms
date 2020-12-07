@@ -46,6 +46,7 @@ class VerificationSMS:
         messageContent=driver.find_element_by_id("input_2")
         messageContent.send_keys(f"Your confirmation code is: {verfication_code}")
         messageContent.send_keys(Keys.ENTER)
+        driver.close()
 
         
 
