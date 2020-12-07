@@ -1,5 +1,5 @@
 # verification_sms
-Verification SMS sent from Google Voice account to a given phone number. Useful for unique user account creation.
+Verification SMS sent from Google Voice account to a given phone number. Useful for unique user account creation and/or 2FA.
 
 ## Requirements
 1. Python3 (with Venv)
@@ -36,6 +36,6 @@ vm.send_message(email, password, phone, vcode)
 ```
 
 ## Example
-Check `example/flask` for a working application that implements the functionality on a blog account from the official Flask tutorial.
+Check `example/flaskr` for a working application that implements the functionality on a blog account from the official Flask tutorial.
 
 Follow `example/README.md` to properly run the Flask example.
