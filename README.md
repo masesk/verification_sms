@@ -1,6 +1,8 @@
 # verification_sms
 Verification SMS sent from Google Voice account to a given phone number. Useful for unique user account creation and/or 2FA.
 
+![](flow.png)
+
 ## Requirements
 1. Python3 (with Venv)
 2. ChromeDriver (Chromium)
